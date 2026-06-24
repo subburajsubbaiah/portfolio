@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Subburaj Subbaiah - Software Developer, UI/UX Designer, and AI-assisted Engineer specializing in modern responsive web applications and technical debugging.">
+  <meta name="keywords" content="Software Developer, UI/UX Design, EEE, Circuit Debugging, AI Developer, Figma, Framer, HTML, CSS, JavaScript, Portfolio">
+  <meta name="author" content="Subburaj Subbaiah">
+  <title>Subburaj Subbaiah | Software Developer & UI/UX Designer</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Ambient Glowing Blobs -->
+  <div class="blob blob-1" aria-hidden="true"></div>
+  <div class="blob blob-2" aria-hidden="true"></div>
+  <div class="blob blob-3" aria-hidden="true"></div>
+  <div class="blob blob-4" aria-hidden="true"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="main-header">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" id="logo-link">
+        <span class="logo-accent">&lt;</span>Subburaj<span class="logo-accent">.dev /&gt;</span>
+      </a>
+      
+      <nav class="nav-links" id="navbar-menu">
+        <a href="#hero" class="nav-link active" id="nav-link-home">HOME</a>
+        <a href="#about" class="nav-link" id="nav-link-about">ABOUT</a>
+        <a href="#projects" class="nav-link" id="nav-link-work">WORK</a>
+        <a href="#contact" class="nav-link" id="nav-link-contact">CONTACT</a>
+      </nav>
+      
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section (Side-by-Side matching Reference Image) -->
+    <section class="hero-section" id="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text-name">Subburaj</span><br>
+            <span id="typing-text" class="typing-target"></span><span class="typed-cursor">|</span>
+          </h1>
+          <p class="hero-subtitle">
+            A detail-oriented Software Developer with a strong passion for web development, UI/UX design, and AI-assisted software engineering. I build responsive and user-friendly web applications, creating seamless interactions that align with both user experiences and business goals.
+          </p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary" id="hero-cta-contact">
+              <span>Contact</span>
+            </a>
+          </div>
+        </div>
+        
+        <div class="hero-visual">
+          <div class="profile-frame">
+            <div class="profile-glow-ring"></div>
+            <img src="profile.jpeg" alt="Subburaj Subbaiah" class="profile-img">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section & Tech Connector Widget -->
+    <section class="about-section section-padding" id="about">
+      <div class="container">
+        <div class="section-header-center">
+          <h2 class="section-title-gradient">About</h2>
+          <div class="header-line-center"></div>
+        </div>
+        
+        <div class="about-content-wrapper">
+          <p class="about-para">
+            My journey into engineering began with an academic foundation in <strong>Electrical & Electronics Engineering</strong>. For years, I specialized in precision hardware debugging, troubleshooting complex multi-layer PCB circuits, and optimizing electrical systems. This rigorous technical background shaped my analytical mind, which I translate today into <strong>Software Development and UI/UX Design</strong>. I design and build modern, interactive, and responsive web applications with flawless layouts, clean code architectures, and robust AI integrations.
+          </p>
+          
+          <!-- Tech Connector Visualization matching Reference Image -->
+          <div class="tech-connector-widget">
+            <div class="tech-orbit-group">
+              <!-- Orbiting Icons -->
+              <div class="orbit-tech-icon tech-html" title="HTML5"><i class="fa-brands fa-html5"></i></div>
+              <div class="orbit-tech-icon tech-css" title="CSS3"><i class="fa-brands fa-css3-alt"></i></div>
+              <div class="orbit-tech-icon tech-js" title="JavaScript"><i class="fa-brands fa-js"></i></div>
+              <div class="orbit-tech-icon tech-figma" title="Figma"><i class="fa-brands fa-figma"></i></div>
+              <div class="orbit-tech-icon tech-framer" title="Framer"><i class="fa-solid fa-cube"></i></div>
+              <div class="orbit-tech-icon tech-ai" title="AI engineering"><i class="fa-solid fa-robot"></i></div>
+              <div class="orbit-tech-icon tech-git" title="Git"><i class="fa-brands fa-git-alt"></i></div>
+            </div>
+            
+            <!-- SVG Connecting Lines -->
+            <svg class="connector-svg" viewBox="0 0 500 200" aria-hidden="true">
+              <!-- Connection Lines from Core to Tech Items -->
+              <path d="M 250 180 Q 250 120 70 80" class="connector-path path-1"/>
+              <path d="M 250 180 Q 250 120 130 65" class="connector-path path-2"/>
+              <path d="M 250 180 Q 250 120 190 55" class="connector-path path-3"/>
+              <path d="M 250 180 Q 250 120 250 50" class="connector-path path-4"/>
+              <path d="M 250 180 Q 250 120 310 55" class="connector-path path-5"/>
+              <path d="M 250 180 Q 250 120 370 65" class="connector-path path-6"/>
+              <path d="M 250 180 Q 250 120 430 80" class="connector-path path-7"/>
+            </svg>
+            
+            <!-- Central Glowing Core -->
+            <div class="connector-core">
+              <div class="core-logo">Σ</div>
+              <div class="core-pulse-1"></div>
+              <div class="core-pulse-2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Skills Dashboard & Troubleshooter -->
+    <section class="skills-section section-padding" id="skills">
+      <div class="container">
+        <div class="section-header-center">
+          <h2 class="section-title-gradient">Technical Arsenal</h2>
+          <div class="header-line-center"></div>
+        </div>
+        
+        <div class="about-grid">
+          <div class="skills-dashboard-wrapper glass-card">
+            <div class="skills-tabs">
+              <button class="skill-tab active" data-target="web-skills" id="tab-web">Web</button>
+              <button class="skill-tab" data-target="design-skills" id="tab-design">UI/UX</button>
+              <button class="skill-tab" data-target="ai-skills" id="tab-ai">AI Tools</button>
+              <button class="skill-tab" data-target="eng-skills" id="tab-eng">Hardware</button>
+            </div>
+            
+            <div class="skills-panel-content">
+              <!-- Web Tech Category -->
+              <div class="skills-panel active" id="web-skills">
+                <div class="skills-list-block">
+                  <div class="skill-row">
+                    <span class="skill-name">HTML5 / CSS3 / SEO</span>
+                    <span class="skill-pct">95%</span>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 95%"></div></div>
+                  </div>
+                  <div class="skill-row">
+                    <span class="skill-name">JavaScript (ES6+)</span>
+                    <span class="skill-pct">85%</span>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 85%"></div></div>
+                  </div>
+                  <div class="skill-row">
+                    <span class="skill-name">Responsive layouts</span>
+                    <span class="skill-pct">90%</span>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 90%"></div></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- UI/UX Category -->
+              <div class="skills-panel" id="design-skills">
+                <div class="skills-list-block">
+                  <div class="skill-row">
+                    <span class="skill-name">Figma Prototyping</span>
+                    <span class="skill-pct">90%</span>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 90%"></div></div>
+                  </div>
+                  <div class="skill-row">
+                    <span class="skill-name">Framer Design</span>
+                    <span class="skill-pct">80%</span>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 80%"></div></div>
+                  </div>
+                  <div class="skill-row">
+                    <span class="skill-name">Wireframing & Prototyping</span>
+                    <span class="skill-pct">85%</span>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 85%"></div></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- AI Tools Category -->
+              <div class="skills-panel" id="ai-skills">
+                <div class="skills-list-block">
+                  <div class="skill-row">
+                    <span class="skill-name">Antigravity & Emergent AI</span>
+                    <span class="skill-pct">95%</span>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 95%"></div></div>
+                  </div>
+                  <div class="skill-row">
+                    <span class="skill-name">ChatGPT & Claude Copiloting</span>
+                    <span class="skill-pct">90%</span>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 90%"></div></div>
+                  </div>
+                  <div class="skill-row">
+                    <span class="skill-name">Gemini Workspace</span>
+                    <span class="skill-pct">90%</span>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 90%"></div></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Hardware/Other Category -->
+              <div class="skills-panel" id="eng-skills">
+                <div class="skills-list-block">
+                  <div class="skill-row">
+                    <span class="skill-name">PCB L3/L4 Troubleshooting</span>
+                    <span class="skill-pct">95%</span>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 95%"></div></div>
+                  </div>
+                  <div class="skill-row">
+                    <span class="skill-name">PLC Conveyor Control</span>
+                    <span class="skill-pct">80%</span>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 80%"></div></div>
+                  </div>
+                  <div class="skill-row">
+                    <span class="skill-name">Git Version Control</span>
+                    <span class="skill-pct">75%</span>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 75%"></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Debugger Game Widget -->
+          <div class="debug-widget-card glass-card">
+            <div class="widget-header">
+              <div class="window-dot red"></div>
+              <div class="window-dot yellow"></div>
+              <div class="window-dot green"></div>
+              <span class="widget-title"><i class="fa-solid fa-terminal"></i> diagnostics.sh</span>
+            </div>
+            <div class="widget-body">
+              <p class="console-text text-dim"># Initialize interactive diagnostic system...</p>
+              <p class="console-text text-green">System status: READY. Select a component failure to debug:</p>
+              
+              <div class="debug-actions">
+                <button class="debug-btn" id="debug-pcb" onclick="simulateDebug('pcb')">
+                  <i class="fa-solid fa-circuit-board"></i> PCB Fault
+                </button>
+                <button class="debug-btn" id="debug-ui" onclick="simulateDebug('ui')">
+                  <i class="fa-solid fa-wand-magic-sparkles"></i> UI Bug
+                </button>
+                <button class="debug-btn" id="debug-plc" onclick="simulateDebug('plc')">
+                  <i class="fa-solid fa-gears"></i> PLC Jam
+                </button>
+              </div>
+
+              <div class="console-terminal" id="terminal-output">
+                <p class="console-line line-system">> Click a diagnostic module above to initiate debugging scan...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section (Career Timeline) -->
+    <section class="experience-section section-padding" id="experience">
+      <div class="container">
+        <div class="section-header-center">
+          <h2 class="section-title-gradient">Career History</h2>
+          <div class="header-line-center"></div>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-line"></div>
+          
+          <!-- Item 1 -->
+          <div class="timeline-item left-item">
+            <div class="timeline-badge"><i class="fa-solid fa-laptop-code"></i></div>
+            <div class="timeline-content glass-card">
+              <span class="time-duration">Current Employer</span>
+              <h3>Software Developer</h3>
+              <h4 class="company-name"><i class="fa-solid fa-building"></i> Madura Solution</h4>
+              <ul class="exp-bullets">
+                <li>Develop and maintain responsive, visually rich web interfaces utilizing HTML5, CSS3, and JavaScript.</li>
+                <li>Design pixel-perfect layout prototypes and full-scale mockups using Figma and Framer.</li>
+                <li>Harness specialized agentic AI models (ChatGPT, Claude, Gemini) to significantly accelerate design translation and code logic scaffolding.</li>
+                <li>Identify, debug, and optimize performance bottle-necks to achieve peak rendering speeds and fluid usability.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="timeline-item right-item">
+            <div class="timeline-badge"><i class="fa-solid fa-microchip"></i></div>
+            <div class="timeline-content glass-card">
+              <span class="time-duration">June 2018 – Previous</span>
+              <h3>Debug Technician</h3>
+              <h4 class="company-name"><i class="fa-solid fa-building"></i> Flex India Pvt. Ltd., Chennai</h4>
+              <ul class="exp-bullets">
+                <li>Performed intensive L3 and L4 level diagnosis and repair of complex multi-layered electronic PCB assemblies.</li>
+                <li>Deciphered system circuits and structural blueprints to locate failure nodes, using oscilloscope and multimeter diagnostics.</li>
+                <li>Root-caused electrical defects and worked side-by-side with engineers to implement structural improvements and reduce yield fallout.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="timeline-item left-item">
+            <div class="timeline-badge"><i class="fa-solid fa-bolt"></i></div>
+            <div class="timeline-content glass-card">
+              <span class="time-duration">2 Years</span>
+              <h3>Electrical Maintenance Technician</h3>
+              <h4 class="company-name"><i class="fa-solid fa-building"></i> Goms Electrical Company Pvt. Ltd., Chennai</h4>
+              <ul class="exp-bullets">
+                <li>Orchestrated systematic preventive electrical maintenance schedules for plant machinery.</li>
+                <li>Responded dynamically to emergency motor control and panel breaker faults to minimize factory downtime.</li>
+                <li>Installed and checked safety wiring schemes according to electrical standards.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Work Section (Alternating Overlapping Layout matching Reference Image) -->
+    <section class="projects-section section-padding" id="projects">
+      <div class="container">
+        <div class="section-header-center">
+          <h2 class="section-title-gradient">Recent Work</h2>
+          <p class="section-desc-center">A collection of projects I've worked on.</p>
+          <div class="header-line-center"></div>
+        </div>
+
+        <div class="alternate-projects-list">
+          <!-- Project 1: details left, image right (Madura HRMS) -->
+          <div class="project-alt-card">
+            <div class="project-alt-details">
+              <span class="featured-tag">Featured Project</span>
+              <h3 class="project-alt-title">Madura HRMS</h3>
+              
+              <!-- Floating Overlapping Glass Card -->
+              <div class="project-alt-desc-glass">
+                <p>
+                  A comprehensive, enterprise-level Human Resource Management System (HRMS) dashboard featuring interactive employee tracking, attendance logs, leave management workflows, dynamic performance matrices, and automated salary reporting.
+                </p>
+              </div>
+              
+              <div class="project-alt-tags">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>UI/UX Design</span>
+                <span>Figma</span>
+              </div>
+              <div class="project-alt-links">
+                <a href="https://hrms-b4ce5.web.app/hr-dashboard.html" class="alt-link-icon" target="_blank" rel="noopener" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                <a href="#" class="alt-link-icon" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+            
+            <div class="project-alt-media">
+              <div class="media-frame">
+                <img src="hrms.png" alt="Madura HRMS Dashboard" class="project-img-frame">
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: image left, details right (FlexHub) -->
+          <div class="project-alt-card media-left">
+            <div class="project-alt-media">
+              <div class="media-frame">
+                <img src="freelancer.png" alt="FlexHub Fiverr Gigs Marketplace" class="project-img-frame">
+              </div>
+            </div>
+            
+            <div class="project-alt-details">
+              <span class="featured-tag">Featured Project</span>
+              <h3 class="project-alt-title">FlexHub Marketplace</h3>
+              
+              <!-- Floating Overlapping Glass Card -->
+              <div class="project-alt-desc-glass">
+                <p>
+                  An interactive Fiverr-like freelance service marketplace where users can browse, post, and buy gig contracts from top-rated professionals. Features product cards, filtering menus, and wallet integrations.
+                </p>
+              </div>
+              
+              <div class="project-alt-tags">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>Figma</span>
+                <span>Framer</span>
+              </div>
+              <div class="project-alt-links">
+                <a href="https://flexhup-in-portal.web.app/" class="alt-link-icon" target="_blank" rel="noopener" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                <a href="#" class="alt-link-icon" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: details left, image right (MS HRMS Chat) -->
+          <div class="project-alt-card">
+            <div class="project-alt-details">
+              <span class="featured-tag">Featured Project</span>
+              <h3 class="project-alt-title">MS HRMS Chat System</h3>
+              
+              <!-- Floating Overlapping Glass Card -->
+              <div class="project-alt-desc-glass">
+                <p>
+                  A real-time messaging client and AI chat assistant interface custom-built for internal HR operations. Features live user list sidebars, typing indicators, HRMS automated actions, and appraisal command nodes.
+                </p>
+              </div>
+              
+              <div class="project-alt-tags">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>WebSockets</span>
+                <span>AI Engineering</span>
+              </div>
+              <div class="project-alt-links">
+                <a href="https://mshrms-287d4.web.app/" class="alt-link-icon" target="_blank" rel="noopener" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                <a href="#" class="alt-link-icon" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+            
+            <div class="project-alt-media">
+              <div class="media-frame">
+                <img src="messaging.png" alt="MS HRMS Messaging Application" class="project-img-frame">
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: image left, details right (Gadget Store) -->
+          <div class="project-alt-card media-left">
+            <div class="project-alt-media">
+              <div class="media-frame">
+                <img src="ecommerce.jpg" alt="Gadget Store E-Commerce Web App" class="project-img-frame">
+              </div>
+            </div>
+            
+            <div class="project-alt-details">
+              <span class="featured-tag">Featured Project</span>
+              <h3 class="project-alt-title">Gadget Store E-Commerce</h3>
+              
+              <!-- Floating Overlapping Glass Card -->
+              <div class="project-alt-desc-glass">
+                <p>
+                  A sleek, high-conversion e-commerce platform designed for gadgets and electronics. Includes dynamic product listings, search query filters, shopping cart, and seamless mobile checkouts.
+                </p>
+              </div>
+              
+              <div class="project-alt-tags">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>E-Commerce</span>
+                <span>Responsive Design</span>
+              </div>
+              <div class="project-alt-links">
+                <a href="#" class="alt-link-icon" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i> Project Files</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements & Strengths Section -->
+    <section class="achievements-section section-padding" id="achievements">
+      <div class="container">
+        <div class="section-header-center">
+          <h2 class="section-title-gradient">Achievements</h2>
+          <div class="header-line-center"></div>
+        </div>
+
+        <div class="achieve-grid">
+          <!-- Accomplishments -->
+          <div class="achieve-block">
+            <h3 class="block-title"><i class="fa-solid fa-trophy"></i> Key Accomplishments</h3>
+            
+            <div class="achievement-card glass-card">
+              <div class="ach-icon"><i class="fa-solid fa-award"></i></div>
+              <div class="ach-info">
+                <h4>Diploma College Topper</h4>
+                <p>Secured first rank in electrical engineering studies at MSPVL Polytechnic College (92.17%).</p>
+              </div>
+            </div>
+
+            <div class="achievement-card glass-card">
+              <div class="ach-icon"><i class="fa-solid fa-microchip"></i></div>
+              <div class="ach-info">
+                <h4>3rd Place in Circuit Debugging</h4>
+                <p>Awarded in the inter-collegiate troubleshooting competition held by Alagappa College of Engineering.</p>
+              </div>
+            </div>
+
+            <div class="achievement-card glass-card">
+              <div class="ach-icon"><i class="fa-solid fa-comments"></i></div>
+              <div class="ach-info">
+                <h4>2nd Prize in Embedded Group Discussion</h4>
+                <p>Recognized for critical analysis of microcontrollers and automation hardware architectures.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Core Strengths -->
+          <div class="strengths-block">
+            <h3 class="block-title"><i class="fa-solid fa-star"></i> Core Strengths</h3>
+            <div class="strengths-list">
+              <div class="strength-tag-card glass-card">
+                <i class="fa-solid fa-magnifying-glass-chart strength-icon text-cyan"></i>
+                <div>
+                  <h4>Analytical Debugging</h4>
+                  <p>Resolving software errors utilizing the same structured tracing protocols applied to multi-layer circuit diagnostics.</p>
+                </div>
+              </div>
+              <div class="strength-tag-card glass-card">
+                <i class="fa-solid fa-gauge-high strength-icon text-purple"></i>
+                <div>
+                  <h4>Rapid Adaptability</h4>
+                  <p>Fast assimilation of modern frameworks and toolsets. Transitioned swiftly from electrical boards to frontend development.</p>
+                </div>
+              </div>
+              <div class="strength-tag-card glass-card">
+                <i class="fa-solid fa-people-group strength-icon text-orange"></i>
+                <div>
+                  <h4>Cooperative Sync</h4>
+                  <p>Cooperating with multi-disciplinary units, writing clean git pull-requests, and maintaining visual alignment.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education-section section-padding" id="education">
+      <div class="container">
+        <div class="section-header-center">
+          <h2 class="section-title-gradient">Education</h2>
+          <div class="header-line-center"></div>
+        </div>
+
+        <div class="education-table-container glass-card">
+          <table class="education-table">
+            <thead>
+              <tr>
+                <th scope="col">Degree / Course</th>
+                <th scope="col">Institution</th>
+                <th scope="col">Year</th>
+                <th scope="col">Performance</th>
+                <th scope="col">Board / University</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Degree/Course" class="edu-highlight">B.E. (Electrical & Electronics)</td>
+                <td data-label="Institution">Velammal College of Engineering & Technology, Madurai</td>
+                <td data-label="Year">2012</td>
+                <td data-label="Performance" class="edu-performance">70.0%</td>
+                <td data-label="Board/University">Anna University, Tirunelveli</td>
+              </tr>
+              <tr>
+                <td data-label="Degree/Course" class="edu-highlight">Diploma (Electrical & Electronics)</td>
+                <td data-label="Institution">MSPVL Polytechnic College, Pavoorchatram</td>
+                <td data-label="Year">2009</td>
+                <td data-label="Performance" class="edu-performance">92.17% (Topper)</td>
+                <td data-label="Board/University">DOTE</td>
+              </tr>
+              <tr>
+                <td data-label="Degree/Course" class="edu-highlight">SSLC (Secondary School)</td>
+                <td data-label="Institution">MCM Higher Secondary School, Annamalai Pudur</td>
+                <td data-label="Year">2004</td>
+                <td data-label="Performance" class="edu-performance">75.6%</td>
+                <td data-label="Board/University">State Board</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section (Two Column Layout matching Reference Image) -->
+    <section class="contact-section section-padding" id="contact">
+      <div class="container">
+        <div class="section-header-center">
+          <h2 class="section-title-gradient">Contact</h2>
+          <div class="header-line-center"></div>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Info Details Column -->
+          <div class="contact-info-block">
+            <h3 class="info-title">Drop me a message</h3>
+            <p class="info-desc">
+              I am highly responsive to inquiries regarding frontend development contracts, full-time engineering roles, UI/UX prototype reviews, or AI development integrations. Let's build something exceptional!
+            </p>
+            
+            <div class="contact-links-list">
+              <!-- Whatsapp Connection -->
+              <a href="https://wa.me/918610799250" class="contact-link-item" id="whatsapp-link" target="_blank" rel="noopener">
+                <i class="fa-brands fa-whatsapp whatsapp-icon-color"></i>
+                <div class="contact-text-node">
+                  <span class="link-label">WhatsApp Chat</span>
+                  <span class="link-val">+91 8610799250</span>
+                </div>
+              </a>
+              
+              <!-- Gmail Connection -->
+              <a href="mailto:subburajsubbaiah@gmail.com" class="contact-link-item" id="mail-link">
+                <i class="fa-solid fa-envelope envelope-icon-color"></i>
+                <div class="contact-text-node">
+                  <span class="link-label">Email Address</span>
+                  <span class="link-val">subburajsubbaiah@gmail.com</span>
+                </div>
+              </a>
+              
+              <div class="contact-link-item">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <div class="contact-text-node">
+                  <span class="link-label">Location Base</span>
+                  <span class="link-val">Madurai, Tamil Nadu, India</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Glassmorphic Form Column -->
+          <div class="contact-form-block glass-card">
+            <form id="portfolio-contact-form" onsubmit="handleFormSubmit(event)">
+              <div class="form-group">
+                <label for="form-name">Name</label>
+                <input type="text" id="form-name" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <label for="form-email">Email</label>
+                <input type="email" id="form-email" placeholder="EmailAddress@email.com" required>
+              </div>
+              <div class="form-group">
+                <label for="form-message">Message</label>
+                <textarea id="form-message" rows="4" placeholder="Your message here..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">
+                <span>Send message</span>
+              </button>
+              <div id="form-feedback" class="form-feedback"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span class="footer-copyright">&copy; 2026 Subburaj Subbaiah. All rights reserved.</span>
+        <div class="footer-socials">
+          <a href="#" aria-label="GitHub Profile" class="footer-social-icon"><i class="fa-brands fa-github"></i></a>
+          <a href="#" aria-label="LinkedIn Profile" class="footer-social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Figma Profile" class="footer-social-icon"><i class="fa-brands fa-figma"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Firebase SDK Compat -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
+  <!-- Custom JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
