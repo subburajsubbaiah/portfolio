@@ -158,12 +158,40 @@ ul {
   border: 1px solid var(--border-color);
   border-radius: 16px;
   box-shadow: var(--shadow-card);
-  transition: border-color var(--transition-normal), background-color var(--transition-normal), transform var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  transition: border-color var(--transition-normal), background-color var(--transition-normal), transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), box-shadow var(--transition-normal);
+  will-change: transform;
+}
+
+.glass-card::before, .project-alt-desc-glass::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(800px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(217, 70, 239, 0.12), transparent 40%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glass-card:hover::before, .project-alt-desc-glass:hover::before {
+  opacity: 1;
 }
 
 .glass-card:hover {
   border-color: var(--border-color-hover);
   background-color: var(--bg-card-hover);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(168, 85, 247, 0.2);
+}
+
+/* Keep card child contents above the spotlight glow layer */
+.glass-card > *, .project-alt-desc-glass > * {
+  position: relative;
+  z-index: 2;
 }
 
 /* ==========================================================================
@@ -1079,7 +1107,9 @@ ul {
   box-shadow: var(--shadow-card);
   position: relative;
   z-index: 11;
-  transition: border-color var(--transition-normal);
+  overflow: hidden;
+  transition: border-color var(--transition-normal), transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), box-shadow var(--transition-normal);
+  will-change: transform;
 }
 
 .project-alt-desc-glass p {

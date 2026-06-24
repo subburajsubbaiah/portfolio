@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollEffects();
   initSkillsDashboard();
   initScrollReveal();
+  initCardEffects();
 });
 
 /* ==========================================================================
@@ -338,4 +339,47 @@ function initScrollReveal() {
   });
 
   revealElements.forEach(el => observer.observe(el));
+}
+
+/* ==========================================================================
+   3D TILT & SPOTLIGHT HOVER EFFECTS (PREMIUM EXPERIENCE)
+   ========================================================================== */
+function initCardEffects() {
+  const cards = document.querySelectorAll('.glass-card, .project-alt-desc-glass');
+  
+  // Only apply tilt on devices with mouse/pointer support for optimal UX
+  const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
+  
+  cards.forEach(card => {
+    // 1. Mouse movement tracking for 3D tilt & spotlight position
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      // Update custom properties for spotlight positioning
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+      
+      if (hasFinePointer) {
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        // Calculate tilt angles based on cursor offset from card center (max 6deg)
+        const rotateX = -(y - centerY) / (rect.height / 12);
+        const rotateY = (x - centerX) / (rect.width / 12);
+        
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        card.style.boxShadow = `0 25px 50px rgba(0, 0, 0, 0.75), 0 0 25px rgba(217, 70, 239, 0.25)`;
+      }
+    });
+    
+    // 2. Mouse leave handling to smoothly reset card state
+    card.addEventListener('mouseleave', () => {
+      if (hasFinePointer) {
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+        card.style.boxShadow = '';
+      }
+    });
+  });
 }
