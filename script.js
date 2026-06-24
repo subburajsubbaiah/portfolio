@@ -295,24 +295,46 @@ function handleFormSubmit(event) {
   const email = document.getElementById('form-email').value.trim();
   const message = document.getElementById('form-message').value.trim();
 
-  // Write to Firestore contacts collection
+  // Write to Firestore contacts collection as background backup
   db.collection("contacts").add({
     name: name,
     email: email,
     message: message,
     timestamp: firebase.firestore.FieldValue.serverTimestamp()
   })
-  .then(() => {
-    feedback.className = 'form-feedback success';
-    feedback.textContent = `Thank you, ${name}! Your message has been sent successfully. I will get back to you shortly.`;
-    form.reset();
-    submitBtn.disabled = false;
-    submitBtn.innerHTML = originalBtnText;
+  .catch((error) => {
+    console.error("Firestore backup error: ", error);
+  });
+
+  // Send email to Gmail using FormSubmit AJAX service
+  fetch("https://formsubmit.co/ajax/subburajsubbaiah@gmail.com", {
+    method: "POST",
+    headers: { 
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify({
+      name: name,
+      email: email,
+      message: message,
+      _subject: `New Portfolio Message from ${name}`
+    })
+  })
+  .then(response => {
+    if (response.ok) {
+      feedback.className = 'form-feedback success';
+      feedback.textContent = `Thank you, ${name}! Your message has been sent successfully. I will get back to you shortly.`;
+      form.reset();
+    } else {
+      throw new Error("FormSubmit response not OK");
+    }
   })
   .catch((error) => {
-    console.error("Firestore submission error: ", error);
+    console.error("Email send error: ", error);
     feedback.className = 'form-feedback error';
     feedback.textContent = 'Oops! Something went wrong while sending your message. Please try again or email me directly.';
+  })
+  .finally(() => {
     submitBtn.disabled = false;
     submitBtn.innerHTML = originalBtnText;
   });
