@@ -336,22 +336,7 @@ ul {
   box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(168, 85, 247, 0.15) !important;
 }
 
-/* 7. Education Container (Table highlight) */
-.education-table-container {
-  transition: border-color var(--transition-normal), background-color var(--transition-normal), transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow var(--transition-normal);
-}
-.education-table-container:hover {
-  transform: translateY(-4px);
-  border-color: rgba(6, 182, 212, 0.3) !important;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(6, 182, 212, 0.15) !important;
-}
-.education-table tr {
-  transition: background-color var(--transition-fast);
-}
-.education-table tr:hover td {
-  background: rgba(255, 255, 255, 0.02);
-  color: #fff;
-}
+
 
 /* 8. Contact Form (Breathing Glow) */
 .contact-form-block {
@@ -1501,52 +1486,7 @@ ul {
   font-size: 0.88rem;
 }
 
-/* ==========================================================================
-   ACADEMIC QUALIFICATIONS
-   ========================================================================== */
-.education-table-container {
-  overflow-x: auto;
-  border-radius: 16px;
-  padding: 1px;
-}
 
-.education-table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: left;
-  font-size: 0.95rem;
-}
-
-.education-table th {
-  background: rgba(255, 255, 255, 0.01);
-  color: #fff;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  padding: 20px 24px;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.education-table td {
-  padding: 22px 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-  color: var(--text-muted);
-}
-
-.education-table tr:last-child td {
-  border-bottom: none;
-}
-
-.edu-highlight {
-  font-family: var(--font-heading);
-  color: #fff;
-  font-weight: 600;
-}
-
-.edu-performance {
-  font-family: var(--font-mono);
-  color: var(--color-secondary);
-  font-weight: 700;
-}
 
 /* ==========================================================================
    CONTACT SECTION (TWO COLUMN - REFERENCE IMAGE)
@@ -1906,38 +1846,7 @@ ul {
     margin-right: 0 !important;
   }
   
-  /* Table Mobile Responsive Cards */
-  .education-table thead {
-    display: none;
-  }
-  
-  .education-table, .education-table tbody, .education-table tr, .education-table td {
-    display: block;
-    width: 100%;
-  }
-  
-  .education-table tr {
-    border-bottom: 1px solid var(--border-color);
-    padding: 16px 0;
-  }
-  
-  .education-table td {
-    text-align: right;
-    padding: 8px 16px;
-    border: none;
-    position: relative;
-  }
-  
-  .education-table td::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 16px;
-    width: 50%;
-    text-align: left;
-    font-weight: 700;
-    color: #fff;
-    font-family: var(--font-heading);
-  }
+
   
   .footer-bottom {
     flex-direction: column;

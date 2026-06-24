@@ -322,7 +322,7 @@ function handleFormSubmit(event) {
    SCROLL REVEAL TRIGGERS
    ========================================================================== */
 function initScrollReveal() {
-  const revealElements = document.querySelectorAll('section, .project-alt-card, .timeline-item, .achievement-card, .education-table-container');
+  const revealElements = document.querySelectorAll('section, .project-alt-card, .timeline-item, .achievement-card');
   
   revealElements.forEach(el => el.classList.add('reveal'));
 
