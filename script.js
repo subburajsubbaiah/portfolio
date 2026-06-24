@@ -295,16 +295,22 @@ function handleFormSubmit(event) {
   const email = document.getElementById('form-email').value.trim();
   const message = document.getElementById('form-message').value.trim();
 
-  // Write to Firestore contacts collection as background backup
-  db.collection("contacts").add({
-    name: name,
-    email: email,
-    message: message,
-    timestamp: firebase.firestore.FieldValue.serverTimestamp()
-  })
-  .catch((error) => {
-    console.error("Firestore backup error: ", error);
-  });
+  // Write to Firestore contacts collection as background backup (safely wrapped)
+  try {
+    if (typeof db !== 'undefined' && db && typeof db.collection === 'function') {
+      db.collection("contacts").add({
+        name: name,
+        email: email,
+        message: message,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      })
+      .catch((error) => {
+        console.error("Firestore backup error: ", error);
+      });
+    }
+  } catch (firestoreError) {
+    console.error("Firestore backup failed to initialize: ", firestoreError);
+  }
 
   // Send email to Gmail using FormSubmit AJAX service
   fetch("https://formsubmit.co/ajax/subburajsubbaiah@gmail.com", {
@@ -326,13 +332,23 @@ function handleFormSubmit(event) {
       feedback.textContent = `Thank you, ${name}! Your message has been sent successfully. I will get back to you shortly.`;
       form.reset();
     } else {
-      throw new Error("FormSubmit response not OK");
+      return response.json().then(data => {
+        throw new Error(data.message || "Failed to submit form");
+      }).catch(() => {
+        throw new Error("FormSubmit response was not OK");
+      });
     }
   })
   .catch((error) => {
     console.error("Email send error: ", error);
     feedback.className = 'form-feedback error';
-    feedback.textContent = 'Oops! Something went wrong while sending your message. Please try again or email me directly.';
+    
+    // Check if tested locally from file:// URL
+    if (window.location.protocol === 'file:') {
+      feedback.innerHTML = 'Oops! FormSubmit does not support direct local files (<code>file://</code> URLs). Please test this on your live site (e.g. GitHub Pages) or run a local web server.';
+    } else {
+      feedback.textContent = `Oops! Something went wrong: ${error.message || error}. Please try again or email me directly at subburajsubbaiah@gmail.com.`;
+    }
   })
   .finally(() => {
     submitBtn.disabled = false;
