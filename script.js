@@ -139,137 +139,36 @@ function initScrollEffects() {
    SKILLS DASHBOARD PANEL SWITCHER
    ========================================================================== */
 function initSkillsDashboard() {
-  const tabs = document.querySelectorAll('.skill-tab');
-  const panels = document.querySelectorAll('.skills-panel');
+  const cards = document.querySelectorAll('.skill-card');
+  if (cards.length === 0) return;
 
-  if (tabs.length === 0) return;
-
-  // Initialize progress bar width on first load
-  animateProgressBars(panels[0]);
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      // Deactivate current active tab
-      tabs.forEach(t => t.classList.remove('active'));
-      // Activate clicked tab
-      tab.classList.add('active');
-
-      // Hide all panels
-      panels.forEach(p => p.classList.remove('active'));
-      
-      // Show corresponding panel
-      const targetId = tab.getAttribute('data-target');
-      const targetPanel = document.getElementById(targetId);
-      if (targetPanel) {
-        targetPanel.classList.add('active');
-        animateProgressBars(targetPanel);
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateProgressBars(entry.target);
+        observer.unobserve(entry.target);
       }
     });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
   });
+
+  cards.forEach(card => observer.observe(card));
 }
 
-function animateProgressBars(panel) {
-  const bars = panel.querySelectorAll('.progress-bar-fill');
+function animateProgressBars(card) {
+  const bars = card.querySelectorAll('.progress-bar-fill');
   bars.forEach(bar => {
-    // Reset widths to 0, then animate to target width
-    const targetWidth = bar.style.width;
+    const targetWidth = bar.getAttribute('data-width');
     bar.style.width = '0';
-    
-    // Trigger layout flow to enable CSS transition
-    bar.offsetHeight; 
-    
-    // Set back to target width
-    bar.style.width = targetWidth;
-  });
-}
-
-/* ==========================================================================
-   INTERACTIVE DIAGNOSTIC SIMULATOR (DEBUGGER WIDGET)
-   ========================================================================== */
-let isDebugging = false;
-
-function simulateDebug(type) {
-  if (isDebugging) return;
-  isDebugging = true;
-
-  const terminal = document.getElementById('terminal-output');
-  const buttons = document.querySelectorAll('.debug-btn');
-  
-  if (!terminal) return;
-
-  // Highlight active button
-  buttons.forEach(btn => {
-    btn.classList.remove('active');
-    if (btn.id === `debug-${type}`) {
-      btn.classList.add('active');
-    }
-  });
-
-  // Clear previous diagnostic logs
-  terminal.innerHTML = '';
-
-  let logs = [];
-
-  if (type === 'pcb') {
-    logs = [
-      { text: '> Initiating PCB hardware failure diagnostic scan...', type: 'command' },
-      { text: '[INFO] Reading circuit schematics & system trace lines...', type: 'system' },
-      { text: '[SCAN] Probing multi-layer copper grid... checking impedance...', type: 'system' },
-      { text: '[WARN] Alert: Voltage drop detected on power delivery rails.', type: 'error' },
-      { text: '[FAIL] L3 Circuit Failure: Short identified at SMD Capacitor C14.', type: 'error' },
-      { text: '[DEBUG] Deploying diagnostic hot-patch: Applying L4 micro-bypass...', type: 'command' },
-      { text: '[INFO] Re-routing electrical current loop around failure zone...', type: 'system' },
-      { text: '[SUCCESS] PCB diagnostics completed. Short-circuit isolated.', type: 'success' },
-      { text: 'STATUS: OK. Board electrical safety test output: 100% PASS.', type: 'success' }
-    ];
-  } else if (type === 'ui') {
-    logs = [
-      { text: '> Running frontend layout audit script...', type: 'command' },
-      { text: '[INFO] Scanning DOM structure and rendering tree...', type: 'system' },
-      { text: '[SCAN] Inspecting flexbox containers and padding rules...', type: 'system' },
-      { text: '[WARN] Layout error: Child node overflowing viewport bounds.', type: 'error' },
-      { text: '[FAIL] CSS Mismatch: Flex-wrap disabled on navigation sub-item.', type: 'error' },
-      { text: '[DEBUG] Adjusting media queries & applying dynamic CSS variable override...', type: 'command' },
-      { text: '[INFO] Recalibrating aspect-ratio bounds for mobile breakpoints...', type: 'system' },
-      { text: '[SUCCESS] UI responsive metrics verified.', type: 'success' },
-      { text: 'STATUS: OK. Design system viewport render: 100% PIXEL-PERFECT.', type: 'success' }
-    ];
-  } else if (type === 'plc') {
-    logs = [
-      { text: '> Fetching industrial PLC conveyor register status...', type: 'command' },
-      { text: '[INFO] Reading I/O modules, sensor arrays, & control relays...', type: 'system' },
-      { text: '[SCAN] Scanning double-conveyor line alignment parameters...', type: 'system' },
-      { text: '[WARN] Warning: Interlock safety logic loop suspended.', type: 'error' },
-      { text: '[FAIL] PLC Fault: Photoelectric conveyor sensor #3 blocked.', type: 'error' },
-      { text: '[DEBUG] Rewriting Ladder Logic parameters... resetting safety gates...', type: 'command' },
-      { text: '[INFO] Activating motor driver secondary coils to clear blockage...', type: 'system' },
-      { text: '[SUCCESS] Conveyor control sequence restarted.', type: 'success' },
-      { text: 'STATUS: OK. Double conveyor flow logic synchronized.', type: 'success' }
-    ];
-  }
-
-  let delay = 0;
-  logs.forEach((log, index) => {
+    bar.offsetHeight; // force reflow
     setTimeout(() => {
-      const line = document.createElement('p');
-      line.className = `console-line line-${log.type}`;
-      line.textContent = log.text;
-      terminal.appendChild(line);
-      
-      // Auto scroll to bottom
-      terminal.scrollTop = terminal.scrollHeight;
-
-      // Reset button highlights at the end of the script
-      if (index === logs.length - 1) {
-        isDebugging = false;
-        buttons.forEach(btn => btn.classList.remove('active'));
-      }
-    }, delay);
-    
-    // Stagger the lines for typing speed effect
-    delay += 600 + Math.random() * 400;
+      bar.style.width = targetWidth;
+    }, 50);
   });
 }
+
 
 /* ==========================================================================
    CONTACT FORM SUBMISSION SIMULATION
@@ -360,7 +259,7 @@ function handleFormSubmit(event) {
    SCROLL REVEAL TRIGGERS
    ========================================================================== */
 function initScrollReveal() {
-  const revealElements = document.querySelectorAll('section, .project-alt-card, .timeline-item, .achievement-card');
+  const revealElements = document.querySelectorAll('section, .project-alt-card, .timeline-item, .achievement-card, .skill-card');
   
   revealElements.forEach(el => el.classList.add('reveal'));
 
@@ -390,7 +289,7 @@ function initCardEffects() {
   
   cards.forEach(card => {
     // Check if this card should receive the 3D tilt effect
-    const shouldTilt = card.classList.contains('skills-dashboard-wrapper') || card.classList.contains('achievement-card');
+    const shouldTilt = card.classList.contains('skill-card') || card.classList.contains('achievement-card');
 
     // 1. Mouse movement tracking for 3D tilt & spotlight position
     card.addEventListener('mousemove', e => {

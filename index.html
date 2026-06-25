@@ -134,128 +134,127 @@
           <div class="header-line-center"></div>
         </div>
         
-        <div class="about-grid">
-          <div class="skills-dashboard-wrapper glass-card">
-            <div class="skills-tabs">
-              <button class="skill-tab active" data-target="web-skills" id="tab-web">Web</button>
-              <button class="skill-tab" data-target="design-skills" id="tab-design">UI/UX</button>
-              <button class="skill-tab" data-target="ai-skills" id="tab-ai">AI Tools</button>
-              <button class="skill-tab" data-target="eng-skills" id="tab-eng">Hardware</button>
+        <div class="skills-grid">
+          <!-- Web Card -->
+          <div class="skill-card glass-card">
+            <div class="skill-card-header">
+              <i class="fa-solid fa-code skill-card-icon web-icon"></i>
+              <h3>Web Development</h3>
             </div>
-            
-            <div class="skills-panel-content">
-              <!-- Web Tech Category -->
-              <div class="skills-panel active" id="web-skills">
-                <div class="skills-list-block">
-                  <div class="skill-row">
-                    <span class="skill-name">HTML5 / CSS3 / SEO</span>
-                    <span class="skill-pct">95%</span>
-                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 95%"></div></div>
-                  </div>
-                  <div class="skill-row">
-                    <span class="skill-name">JavaScript (ES6+)</span>
-                    <span class="skill-pct">85%</span>
-                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 85%"></div></div>
-                  </div>
-                  <div class="skill-row">
-                    <span class="skill-name">Responsive layouts</span>
-                    <span class="skill-pct">90%</span>
-                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 90%"></div></div>
-                  </div>
+            <div class="skills-list-block">
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">HTML5 / CSS3 / SEO</span>
+                  <span class="skill-pct">95%</span>
                 </div>
+                <div class="progress-bar-bg"><div class="progress-bar-fill" data-width="95%"></div></div>
               </div>
-
-              <!-- UI/UX Category -->
-              <div class="skills-panel" id="design-skills">
-                <div class="skills-list-block">
-                  <div class="skill-row">
-                    <span class="skill-name">Figma Prototyping</span>
-                    <span class="skill-pct">90%</span>
-                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 90%"></div></div>
-                  </div>
-                  <div class="skill-row">
-                    <span class="skill-name">Framer Design</span>
-                    <span class="skill-pct">80%</span>
-                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 80%"></div></div>
-                  </div>
-                  <div class="skill-row">
-                    <span class="skill-name">Wireframing & Prototyping</span>
-                    <span class="skill-pct">85%</span>
-                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 85%"></div></div>
-                  </div>
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">JavaScript (ES6+)</span>
+                  <span class="skill-pct">85%</span>
                 </div>
+                <div class="progress-bar-bg"><div class="progress-bar-fill" data-width="85%"></div></div>
               </div>
-
-              <!-- AI Tools Category -->
-              <div class="skills-panel" id="ai-skills">
-                <div class="skills-list-block">
-                  <div class="skill-row">
-                    <span class="skill-name">Antigravity & Emergent AI</span>
-                    <span class="skill-pct">95%</span>
-                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 95%"></div></div>
-                  </div>
-                  <div class="skill-row">
-                    <span class="skill-name">ChatGPT & Claude Copiloting</span>
-                    <span class="skill-pct">90%</span>
-                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 90%"></div></div>
-                  </div>
-                  <div class="skill-row">
-                    <span class="skill-name">Gemini Workspace</span>
-                    <span class="skill-pct">90%</span>
-                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 90%"></div></div>
-                  </div>
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">Responsive layouts</span>
+                  <span class="skill-pct">90%</span>
                 </div>
-              </div>
-
-              <!-- Hardware/Other Category -->
-              <div class="skills-panel" id="eng-skills">
-                <div class="skills-list-block">
-                  <div class="skill-row">
-                    <span class="skill-name">PCB L3/L4 Troubleshooting</span>
-                    <span class="skill-pct">95%</span>
-                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 95%"></div></div>
-                  </div>
-                  <div class="skill-row">
-                    <span class="skill-name">PLC Conveyor Control</span>
-                    <span class="skill-pct">80%</span>
-                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 80%"></div></div>
-                  </div>
-                  <div class="skill-row">
-                    <span class="skill-name">Git Version Control</span>
-                    <span class="skill-pct">75%</span>
-                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 75%"></div></div>
-                  </div>
-                </div>
+                <div class="progress-bar-bg"><div class="progress-bar-fill" data-width="90%"></div></div>
               </div>
             </div>
           </div>
-          
-          <!-- Debugger Game Widget -->
-          <div class="debug-widget-card glass-card">
-            <div class="widget-header">
-              <div class="window-dot red"></div>
-              <div class="window-dot yellow"></div>
-              <div class="window-dot green"></div>
-              <span class="widget-title"><i class="fa-solid fa-terminal"></i> diagnostics.sh</span>
-            </div>
-            <div class="widget-body">
-              <p class="console-text text-dim"># Initialize interactive diagnostic system...</p>
-              <p class="console-text text-green">System status: READY. Select a component failure to debug:</p>
-              
-              <div class="debug-actions">
-                <button class="debug-btn" id="debug-pcb" onclick="simulateDebug('pcb')">
-                  <i class="fa-solid fa-circuit-board"></i> PCB Fault
-                </button>
-                <button class="debug-btn" id="debug-ui" onclick="simulateDebug('ui')">
-                  <i class="fa-solid fa-wand-magic-sparkles"></i> UI Bug
-                </button>
-                <button class="debug-btn" id="debug-plc" onclick="simulateDebug('plc')">
-                  <i class="fa-solid fa-gears"></i> PLC Jam
-                </button>
-              </div>
 
-              <div class="console-terminal" id="terminal-output">
-                <p class="console-line line-system">> Click a diagnostic module above to initiate debugging scan...</p>
+          <!-- UI/UX Card -->
+          <div class="skill-card glass-card">
+            <div class="skill-card-header">
+              <i class="fa-brands fa-figma skill-card-icon figma-icon"></i>
+              <h3>UI/UX Design</h3>
+            </div>
+            <div class="skills-list-block">
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">Figma Prototyping</span>
+                  <span class="skill-pct">90%</span>
+                </div>
+                <div class="progress-bar-bg"><div class="progress-bar-fill" data-width="90%"></div></div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">Framer Design</span>
+                  <span class="skill-pct">80%</span>
+                </div>
+                <div class="progress-bar-bg"><div class="progress-bar-fill" data-width="80%"></div></div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">Wireframing & Prototyping</span>
+                  <span class="skill-pct">85%</span>
+                </div>
+                <div class="progress-bar-bg"><div class="progress-bar-fill" data-width="85%"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI Tools Card -->
+          <div class="skill-card glass-card">
+            <div class="skill-card-header">
+              <i class="fa-solid fa-robot skill-card-icon ai-icon"></i>
+              <h3>AI Tools</h3>
+            </div>
+            <div class="skills-list-block">
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">Antigravity & Emergent AI</span>
+                  <span class="skill-pct">95%</span>
+                </div>
+                <div class="progress-bar-bg"><div class="progress-bar-fill" data-width="95%"></div></div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">ChatGPT & Claude Copiloting</span>
+                  <span class="skill-pct">90%</span>
+                </div>
+                <div class="progress-bar-bg"><div class="progress-bar-fill" data-width="90%"></div></div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">Gemini Workspace</span>
+                  <span class="skill-pct">90%</span>
+                </div>
+                <div class="progress-bar-bg"><div class="progress-bar-fill" data-width="90%"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hardware Card -->
+          <div class="skill-card glass-card">
+            <div class="skill-card-header">
+              <i class="fa-solid fa-microchip skill-card-icon hardware-icon"></i>
+              <h3>Hardware</h3>
+            </div>
+            <div class="skills-list-block">
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">PCB L3/L4 Troubleshooting</span>
+                  <span class="skill-pct">95%</span>
+                </div>
+                <div class="progress-bar-bg"><div class="progress-bar-fill" data-width="95%"></div></div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">PLC Conveyor Control</span>
+                  <span class="skill-pct">80%</span>
+                </div>
+                <div class="progress-bar-bg"><div class="progress-bar-fill" data-width="80%"></div></div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-info">
+                  <span class="skill-name">Git Version Control</span>
+                  <span class="skill-pct">75%</span>
+                </div>
+                <div class="progress-bar-bg"><div class="progress-bar-fill" data-width="75%"></div></div>
               </div>
             </div>
           </div>
@@ -292,6 +291,22 @@
 
           <!-- Item 2 -->
           <div class="timeline-item right-item">
+            <div class="timeline-badge"><i class="fa-solid fa-volume-high"></i></div>
+            <div class="timeline-content glass-card">
+              <span class="time-duration">January 2023 – December 2025</span>
+              <h3>Technical Engineer</h3>
+              <h4 class="company-name"><i class="fa-solid fa-building"></i> POPE Professional Acoustics Limited, Tiruppur</h4>
+              <ul class="exp-bullets">
+                <li>Installed, configured, and maintained professional audio, acoustic, and AV systems for commercial and industrial projects.</li>
+                <li>Performed system testing, troubleshooting, and commissioning of audio equipment to ensure optimal performance.</li>
+                <li>Conducted preventive and corrective maintenance activities for audio and acoustic systems.</li>
+                <li>Analyzed technical issues and provided effective solutions to minimize system downtime.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="timeline-item left-item">
             <div class="timeline-badge"><i class="fa-solid fa-microchip"></i></div>
             <div class="timeline-content glass-card">
               <span class="time-duration">June 2018 – Previous</span>
@@ -305,8 +320,8 @@
             </div>
           </div>
 
-          <!-- Item 3 -->
-          <div class="timeline-item left-item">
+          <!-- Item 4 -->
+          <div class="timeline-item right-item">
             <div class="timeline-badge"><i class="fa-solid fa-bolt"></i></div>
             <div class="timeline-content glass-card">
               <span class="time-duration">2 Years</span>
